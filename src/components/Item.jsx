@@ -28,19 +28,16 @@ const Item = ({ image, code, name, price, quantity, setQuantity }) => {
           <p className='mb-1'>{name}</p>
 
           <p>
-            <span className='capitalize'>rp</span>
-            {price}/<span className='text-muted'>krat</span>
+            {price.toLocaleString('id-ID', {
+              style: 'currency',
+              currency: 'IDR',
+            })}
+            /<span className='text-muted'>krat</span>
           </p>
         </div>
 
         <div className='self-end'>
-          {quantity === 1 ? (
-            <Counter
-              quantity={quantity}
-              decrement={handleDecrement}
-              increment={handleIncrement}
-            />
-          ) : (
+          {quantity === 0 ? (
             <button
               type='button'
               className='text-white rounded-xl text-sm px-4 py-2 bg-secondary capitalize'
@@ -48,6 +45,12 @@ const Item = ({ image, code, name, price, quantity, setQuantity }) => {
             >
               beli
             </button>
+          ) : (
+            <Counter
+              quantity={quantity}
+              decrement={handleDecrement}
+              increment={handleIncrement}
+            />
           )}
         </div>
       </div>

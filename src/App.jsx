@@ -15,41 +15,41 @@ function App() {
       name: 'Daging Sapi',
       price: 10000,
       image: dagingSapi,
-      quantity: 0,
+      qty: 0,
     },
     {
       code: 'SKU01234556',
       name: 'Saus ABG - Pedas',
       price: 10000,
       image: sausAbg,
-      quantity: 0,
+      qty: 0,
     },
     {
       code: 'SKU01234556',
       name: 'Ikan Salamander',
       price: 10000,
       image: ikanSalamander,
-      quantity: 0,
+      qty: 0,
     },
     {
       code: 'SKU01234556',
       name: 'Beras Kygristan',
       price: 10000,
       image: berasKygristan,
-      quantity: 0,
+      qty: 0,
     },
     {
       code: 'SKU01234556',
       name: 'Jeruk Medan Manis',
       price: 10000,
       image: jerukMedan,
-      quantity: 0,
+      qty: 0,
     },
   ])
 
-  const handleQuantityChange = (index, newQuantity) => {
+  const handleChanges = (index, newQuantity) => {
     const updatedProducts = [...products]
-    updatedProducts[index].quantity = newQuantity
+    updatedProducts[index].qty = newQuantity
     setProducts(updatedProducts)
   }
 
@@ -59,7 +59,7 @@ function App() {
 
       <Products
         products={products}
-        handleQuantityChange={handleQuantityChange}
+        handleChanges={handleChanges}
       />
     </>
   )

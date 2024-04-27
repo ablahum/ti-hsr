@@ -1,8 +1,8 @@
 import Item from './Item'
 import Search from './Search'
 
-const Products = ({ products, handleQuantityChange }) => (
-  <div className='p-5 rounded-t-3xl absolute top-24 left-0 right-0 bg-white'>
+const Products = ({ products, handleChanges }) => (
+  <div className='p-5 rounded-t-3xl absolute top-24 left-0 right-0 bottom-0 bg-white'>
     <div className='pb-2'>
       <h2 className='font-semibold capitalize'>produk</h2>
 
@@ -20,8 +20,8 @@ const Products = ({ products, handleQuantityChange }) => (
         name={product.name}
         price={product.price}
         image={product.image}
-        quantity={product.quantity}
-        setQuantity={(newQuantity) => handleQuantityChange(idx, newQuantity)}
+        quantity={product.qty}
+        setQuantity={(newQty) => handleChanges(idx, newQty)}
       />
     ))}
   </div>

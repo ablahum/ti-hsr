@@ -1,7 +1,5 @@
 const Search = () => (
-  <form className='flex items-center max-w-lg mx-auto my-2'>
-    <label className='sr-only'>search</label>
-
+  <form className='flex items-center mx-auto my-2'>
     <div className='relative w-full'>
       <input
         type='text'
